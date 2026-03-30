@@ -1,194 +1,189 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Undangan Pernikahan Elegan</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Bimbi & Sasa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; font-family:'Poppins',sans-serif; background:#f8f6f3; }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9f7f4;
-      color: #333;
-      overflow-x: hidden;
+    header {
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      color:white;
+      background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1520854221256-17451cc331bf');
+      background-size:cover;
     }
 
-    h1, h2 { font-family: 'Playfair Display', serif; }
+    h1 { font-family:'Playfair Display'; font-size:3.5em; margin:0; }
+    h2 { font-family:'Playfair Display'; }
 
-    /* COVER */
-    .cover {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('https://images.unsplash.com/photo-1520854221256-17451cc331bf');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
+    .btn {
+      margin-top:20px;
+      padding:12px 30px;
+      border:none;
+      border-radius:30px;
+      background:#c9a646;
+      color:white;
+      cursor:pointer;
     }
 
-    .cover h1 {
-      font-size: 3em;
-      font-family: 'Great Vibes', cursive;
-    }
+    section { padding:70px 20px; text-align:center; }
 
-    .btn-open {
-      margin-top: 20px;
-      padding: 12px 30px;
-      background: gold;
-      border-radius: 30px;
-      cursor: pointer;
-      border: none;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
+    .couple { display:flex; gap:30px; justify-content:center; flex-wrap:wrap; }
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      max-width: 600px;
-      margin: 20px auto;
-      box-shadow: 0 10px 30px rgba(0,0,0,.08);
-      animation: fadeUp 1s ease;
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      width:260px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.08);
     }
 
-    @keyframes fadeUp {
-      from { opacity:0; transform: translateY(40px); }
-      to { opacity:1; transform: translateY(0); }
-    }
-
-    .couple {
-      font-size: 2.5em;
-      font-family: 'Great Vibes', cursive;
-    }
-
-    .countdown {
-      font-size: 1.5em;
-      margin-top: 15px;
-      color: #bfa046;
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:10px;
     }
 
     .gallery img {
-      width: 100%;
-      border-radius: 15px;
-      margin-top: 10px;
+      width:100%;
+      border-radius:12px;
+      transition:0.3s;
+    }
+    .gallery img:hover { transform:scale(1.05); }
+
+    .countdown {
+      font-size:1.5em;
+      margin-top:10px;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 25px;
-      background: #d4af37;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-    }
+    iframe { width:100%; height:300px; border:none; border-radius:10px; }
 
-    footer {
-      background: #222;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .hidden { display:none; }
+    footer { background:#222; color:white; padding:20px; }
   </style>
 </head>
 <body>
 
-<!-- COVER -->
-<div class="cover" id="cover">
-  <p>Undangan Pernikahan</p>
-  <h1>Rama & Sinta</h1>
-  <button class="btn-open" onclick="openInvite()">Buka Undangan</button>
-</div>
-
-<!-- MAIN CONTENT -->
-<div id="main" class="hidden">
-
-<section>
-  <div class="card">
-    <h2>Assalamu'alaikum</h2>
-    <p>Dengan memohon rahmat Allah SWT, kami mengundang Anda untuk hadir di hari bahagia kami.</p>
-  </div>
-</section>
-
-<section>
-  <div class="card">
-    <div class="couple">Rama & Sinta</div>
-    <p class="countdown" id="countdown"></p>
-  </div>
-</section>
-
-<section>
-  <div class="card">
-    <h2>Acara</h2>
-    <p>Akad: 09.00 WIB</p>
-    <p>Resepsi: 11.00 WIB</p>
-    <p>Lokasi: Gedung Pernikahan</p>
-    <a class="btn" href="https://maps.google.com" target="_blank">Buka Maps</a>
-  </div>
-</section>
-
-<section>
-  <div class="card gallery">
-    <h2>Galeri</h2>
-    <img src="https://images.unsplash.com/photo-1529634899154-37d9c2a2d1c1">
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-  </div>
-</section>
-
-<section>
-  <div class="card">
-    <h2>RSVP</h2>
-    <a class="btn" href="#">Konfirmasi Kehadiran</a>
-  </div>
-</section>
-
-<footer>
-  <p>Terima kasih atas doa & kehadirannya</p>
-</footer>
-
-</div>
+<!-- HERO -->
+<header>
+  <h1>Bimbi & Sasa</h1>
+  <p>Kepada Yth. <span id="guest">Tamu Undangan</span></p>
+  <button class="btn" onclick="openInvite()">Buka Undangan</button>
+</header>
 
 <!-- AUDIO -->
 <audio id="music" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
 </audio>
 
+<!-- OPENING -->
+<section id="opening" style="display:none;">
+  <h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+  <p>Dengan memohon rahmat Allah SWT, kami mengundang Anda untuk menghadiri pernikahan kami.</p>
+</section>
+
+<!-- COUNTDOWN -->
+<section>
+  <h2>Menuju Hari Bahagia</h2>
+  <div class="countdown" id="countdown"></div>
+</section>
+
+<!-- COUPLE -->
+<section>
+  <h2>Pasangan Pengantin</h2>
+  <div class="couple">
+    <div class="card">
+      <h3>Bimbi</h3>
+      <p>Putra dari Bapak & Ibu</p>
+    </div>
+    <div class="card">
+      <h3>Sasa</h3>
+      <p>Putri dari Bapak & Ibu</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT -->
+<section>
+  <h2>Detail Acara</h2>
+  <p>Akad: 10 Oktober 2026</p>
+  <p>Resepsi: 10 Oktober 2026</p>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <h2>Galeri</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+    <img src="https://images.unsplash.com/photo-1529634896116-cdb1f4c46a6d">
+    <img src="https://images.unsplash.com/photo-1501908734255-16579c18c25f">
+  </div>
+</section>
+
+<!-- MAP -->
+<section>
+  <h2>Lokasi</h2>
+  <iframe src="https://www.google.com/maps?q=jakarta&output=embed"></iframe>
+</section>
+
+<!-- RSVP -->
+<section>
+  <h2>Konfirmasi Kehadiran</h2>
+  <input placeholder="Nama" id="name"><br><br>
+  <select id="status">
+    <option>Hadir</option>
+    <option>Tidak Hadir</option>
+  </select><br><br>
+  <button class="btn" onclick="rsvp()">Kirim</button>
+  <p id="rsvpResult"></p>
+</section>
+
+<!-- REKENING -->
+<section>
+  <h2>Amplop Digital</h2>
+  <p>BCA - 1234567890 (Bimbi)</p>
+  <p>Mandiri - 987654321 (Sasa)</p>
+</section>
+
+<footer>
+  <p>Terima kasih atas doa dan restu Anda</p>
+</footer>
+
 <script>
-  function openInvite(){
-    document.getElementById('cover').style.display='none';
-    document.getElementById('main').classList.remove('hidden');
-    document.getElementById('music').play();
-  }
+function openInvite(){
+  document.getElementById('opening').style.display='block';
+  document.getElementById('music').play();
+  window.scrollTo({top:document.getElementById('opening').offsetTop,behavior:'smooth'});
+}
 
-  // COUNTDOWN
-  const targetDate = new Date("Dec 12, 2026 09:00:00").getTime();
-  const countdownEl = document.getElementById("countdown");
+// Nama tamu
+const params=new URLSearchParams(window.location.search);
+const name=params.get('to');
+if(name){ document.getElementById('guest').innerText=name; }
 
-  setInterval(()=>{
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+// Countdown
+const target=new Date("Oct 10, 2026 08:00:00").getTime();
+setInterval(()=>{
+  const now=new Date().getTime();
+  const diff=target-now;
+  const d=Math.floor(diff/(1000*60*60*24));
+  const h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m=Math.floor((diff%(1000*60*60))/(1000*60));
+  document.getElementById('countdown').innerHTML=d+" Hari "+h+" Jam "+m+" Menit";
+},1000);
 
-    const days = Math.floor(distance / (1000*60*60*24));
-    const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-    const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
-
-    countdownEl.innerHTML = `${days} hari ${hours} jam ${minutes} menit`;
-  },1000);
+// RSVP simple
+function rsvp(){
+  const n=document.getElementById('name').value;
+  const s=document.getElementById('status').value;
+  document.getElementById('rsvpResult').innerText="Terima kasih "+n+" ("+s+")";
+}
 </script>
 
 </body>
